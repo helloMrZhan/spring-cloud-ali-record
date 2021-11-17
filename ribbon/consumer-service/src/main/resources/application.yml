@@ -7,5 +7,12 @@ spring:
     nacos:
       discovery:
         server-addr: localhost:8848 #nacos服务器地址
-        username: nacos #用户名密码
+        username: nacos
         password: nacos
+logging:
+  level:
+    root: debug #开启debug级别日志
+producer-service: #服务提供者的微服务id
+  ribbon:
+    #设置自定义负载均衡策略（负载均衡策略的类均在com.netflix.loadbalancer包下，默认为 com.netflix.loadbalancer.RoundRobinRule 轮训策略）
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
