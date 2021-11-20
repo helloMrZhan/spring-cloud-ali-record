@@ -10,7 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>producer-service3</artifactId>
-
+    <name>ribbon-producer-service3</name>
 
     <dependencies>
         <!--spring boot web模块-->

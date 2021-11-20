@@ -9,8 +9,8 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>consumer-service</artifactId>
-
+    <artifactId>feign-consumer-service</artifactId>
+    <name>feign-consumer-service</name>
 
     <dependencies>
         <!--spring boot web模块-->

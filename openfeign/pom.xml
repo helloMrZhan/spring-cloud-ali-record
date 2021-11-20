@@ -7,10 +7,10 @@
     <packaging>pom</packaging>
     <version>0.0.1-SNAPSHOT</version>
     <modules>
-        <module>consumer-service</module>
-        <module>producer-service</module>
+        <module>feign-consumer-service</module>
+        <module>feign-producer-service</module>
     </modules>
-    <name>ribbon</name>
+    <name>feign</name>
     <description>OpenFeign案例</description>
 
     <properties>
