@@ -1,0 +1,13 @@
+server:
+  port: 9002
+  servlet:
+    context-path: /system
+spring:
+  application:
+    name: system-service #应用/微服务名字
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848 #nacos服务器地址
+        username: nacos #用户名密码
+        password: nacos

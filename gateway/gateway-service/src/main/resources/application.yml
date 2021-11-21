@@ -1,0 +1,45 @@
+server:
+  port: 8001
+spring:
+  application:
+    name: gateway #配置微服务id
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848 #nacos通信地址
+        username: nacos
+        password: nacos
+    gateway:
+      routes:  #路由规则配置
+        #第一个路由配置，system-service系统服务路由规则
+        - id: system-service-route #路由唯一标识
+          #lb开头代表基于gateway的负载均衡策略选择实例
+          uri: lb://system-service
+          #谓词配置
+          predicates:
+            #Path路径谓词，代表用户端URI如果以/api/system开头便会转发到system-service实例
+            - Path=/api/system/**
+            #After生效时间谓词，2020年11月15日后该路由才能在网关对外暴露
+            - After=2021-11-05T00:00:00.000+08:00[Asia/Shanghai]
+          #谓词配置
+          filters:
+            #忽略掉第一层前缀进行转发
+            - StripPrefix=1
+            #为响应头附加X-Response=Blue
+            - AddResponseHeader=X-Response,Blue
+        #第二个路由配置，auth-service路由规则
+        - id: auth-service-route
+          uri: lb://auth-service
+          predicates:
+            - Path=/api/auth/**
+          filters:
+            - StripPrefix=1
+#      discovery:
+#        locator:
+#          enabled: true #locator.enabled为true是让gateway通过nacos根据URL规则实现自动路由转发,
+                          #生产环境一般不设置自动路由，通过配置routes的形式实现
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*' #对外暴露actuator所有监控指标，便于监控系统收集跟踪
