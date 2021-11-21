@@ -1,12 +1,14 @@
-package com.zjq.consumerservice.entity;
+package com.zjq.producerservice.entity;
+
+import java.io.Serializable;
 
 /**
  * <p>用户实体</p>
- *
+ *  Dubbo 在对象传输过程中使用了 JDK 序列化，对象必须实现 Serializable 接口。
  * @Author zjq
  * @Date 2021/11/19
  */
-public class User {
+public class User implements Serializable {
 
     private String username;
 

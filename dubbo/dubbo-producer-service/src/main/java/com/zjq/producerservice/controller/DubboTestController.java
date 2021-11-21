@@ -1,9 +1,7 @@
-package com.zjq.consumerservice.controller;
+package com.zjq.producerservice.controller;
 
-import com.zjq.consumerservice.entity.User;
-import com.zjq.consumerservice.feignclient.ProducerServiceClient;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import com.zjq.producerservice.dubbo.ProducerService;
+import com.zjq.producerservice.entity.User;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -12,29 +10,26 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.annotation.Resource;
 
 /**
- * <p>测试OpenFeign</p>
+ * <p>测试dubbo</p>
  *
  * @Author zjq
  * @Date 2021/11/17
  */
 @RestController
-@RequestMapping(value = "feign")
-public class OpenFeignTestController {
-
-    private Logger log = LoggerFactory.getLogger(OpenFeignTestController.class);
+@RequestMapping(value = "dubbo")
+public class DubboTestController {
 
     @Resource
-    private ProducerServiceClient producerServiceClient;
+    private ProducerService producerService;
 
     @GetMapping(value = "/hello")
     public String hello(@RequestParam(value = "username",required = false,defaultValue = "詹先生") String username){
-
-        return producerServiceClient.hello(username);
+        return producerService.hello(username);
     }
 
     @GetMapping(value = "/getUser")
     public User getUserByName(@RequestParam(value = "username",required = false,defaultValue = "詹先生") String username){
-        return producerServiceClient.getUserByName(username);
-
+        return producerService.getUserByName(username);
     }
+
 }

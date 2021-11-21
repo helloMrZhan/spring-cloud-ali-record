@@ -1,4 +1,4 @@
-package com.zjq.consumerservice.entity;
+package com.zjq.producerservice.entity;
 
 /**
  * <p>用户实体</p>
@@ -7,6 +7,18 @@ package com.zjq.consumerservice.entity;
  * @Date 2021/11/19
  */
 public class User {
+
+    /**
+     *client端需要有这个无参构造不然会报错no Creators, like default constructor, exist): cannot deserialize from Object
+     */
+    public User() {
+    }
+
+    public User(String username, String password, String address) {
+        this.username = username;
+        this.password = password;
+        this.address = address;
+    }
 
     private String username;
 
@@ -35,12 +47,6 @@ public class User {
     }
 
     public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public User(String username, String password, String address) {
-        this.username = username;
-        this.password = password;
         this.address = address;
     }
 }
