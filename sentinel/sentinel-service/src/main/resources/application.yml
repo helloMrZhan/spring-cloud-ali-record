@@ -1,0 +1,20 @@
+server:
+  port: 8001
+spring:
+  application:
+    name: sentinel-client #应用/微服务名字
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848 #nacos服务器地址
+        username: nacos
+        password: nacos
+    sentinel: #Sentinel Dashboard通信地址
+      transport:
+        dashboard: localhost:9100
+      eager: true #取消控制台懒加载
+management:
+  endpoints:
+    web: #将所有可用的监控指标项对外暴露
+      exposure: #可以访问 /actuator/sentinel进行查看Sentinel监控项
+        include: '*'
