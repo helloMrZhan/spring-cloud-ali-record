@@ -1,0 +1,18 @@
+server:
+  port: 8001
+
+spring:
+  application:
+    name: nacos-config-example
+  profiles:
+    active: test #当前运行环境
+  main:
+    allow-bean-definition-overriding: true
+#logging:
+#  level:
+#    root: debug #开启debug日志
+
+
+
+
+
