@@ -9,8 +9,8 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>sentinel-service</artifactId>
-    <name>sentinel-service</name>
+    <artifactId>sentinel-sample</artifactId>
+    <name>sentinel-sample</name>
 
     <dependencies>
         <!--spring boot web模块-->
@@ -32,6 +32,12 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <!-- Sentinel 为 Nacos 扩展的数据源模块，允许将规则数据存储在 Nacos 配置中心，
+        在微服务启动时利用该模块 Sentinel 会自动在 Nacos下载对应的规则数据-->
+        <dependency>
+            <groupId>com.alibaba.csp</groupId>
+            <artifactId>sentinel-datasource-nacos</artifactId>
         </dependency>
 
     </dependencies>

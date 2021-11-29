@@ -1,4 +1,4 @@
-package com.zjq.sentinelservice.controller;
+package com.zjq.sentinelsample.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,6 +15,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(value = "hello")
 public class HelloWorldController {
 
+    /**
+     * 测试限流
+     * @param username
+     * @return
+     */
     @GetMapping(value = "/testLimit")
     public String hello(@RequestParam(value = "username",required = false,defaultValue = "詹先生") String username){
         return "hello "+username+", I'm sentinel service,follow me,go go go.";

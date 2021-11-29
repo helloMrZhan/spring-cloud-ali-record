@@ -7,7 +7,7 @@
     <packaging>pom</packaging>
     <version>0.0.1-SNAPSHOT</version>
     <modules>
-        <module>sentinel-service</module>
+        <module>sentinel-sample</module>
     </modules>
     <name>sentinel</name>
     <description>Sentinel-案例</description>
