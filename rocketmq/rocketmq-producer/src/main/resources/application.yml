@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: rocketmq-producer
+server:
+  port: 8080
