@@ -8,6 +8,7 @@
     <version>0.0.1-SNAPSHOT</version>
     <modules>
         <module>rocketmq-producer</module>
+        <module>rocketmq-consumer</module>
     </modules>
     <name>rocketmq</name>
     <description>RocketMQ案例</description>
