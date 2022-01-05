@@ -1,7 +1,7 @@
 # 记录springcloud-alibaba学习总结记录
 
 ## 服务治理
-Nacos注册中心
+[Nacos注册中心](./nacos)
 
 ## 服务通信
 Ribbon客户端负载均衡   
