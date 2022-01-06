@@ -102,7 +102,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>2.3.7.RELEASE</version>
                 <configuration>
-                    <mainClass>com.zjq.rmpoints.RmpointsApplication</mainClass>
+                    <mainClass>com.zjq.rmpoints.RmPointsApplication</mainClass>
                 </configuration>
                 <executions>
                     <execution>
