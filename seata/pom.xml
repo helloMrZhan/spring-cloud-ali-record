@@ -11,6 +11,8 @@
     <modules>
         <module>rm-order</module>
         <module>rm-points</module>
+        <module>rm-storage</module>
+        <module>tm-mall</module>
     </modules>
     <properties>
         <java.version>1.8</java.version>
