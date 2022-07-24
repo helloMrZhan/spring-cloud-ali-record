@@ -9,6 +9,7 @@
     <modules>
         <module>rocketmq-producer</module>
         <module>rocketmq-consumer</module>
+        <module>rocketmq-api</module>
     </modules>
     <name>rocketmq</name>
     <description>RocketMQ案例</description>
